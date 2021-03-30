@@ -1,0 +1,30 @@
+.login {
+}
+
+.form-group {
+  position: relative;
+  .placeholder {
+    // position: absolute;
+    top: -1rem;
+  }
+
+  .form-control,
+  .input-custom {
+    all: unset;
+    border-bottom: 2px solid #d4d4d4;
+    display: block;
+    width: 100%;
+  }
+  .form-control:focus {
+    all: unset;
+    @extend .input-custom;
+    border-bottom: 2px solid $primary;
+    display: block;
+    width: 100%;
+
+    // &::placeholder {
+    //   visibility: none;
+    //   color: red;
+    // }
+  }
+}

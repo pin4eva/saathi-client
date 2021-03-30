@@ -1,0 +1,110 @@
+$grid-count: 2 3 4 5 6;
+
+//
+
+// Text Properties
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.display-1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  @media screen and (min-width: 768px) {
+    line-height: 4.8rem;
+    font-size: 4rem;
+  }
+}
+
+.text-18 {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+
+.text-inherit {
+  color: inherit;
+}
+
+.size-inherit {
+  font-size: inherit;
+}
+.text-primary {
+  color: $primary;
+}
+
+.bg-primary {
+  background: $primary;
+}
+.bg-gray {
+  background: $gray;
+}
+
+// Buttons
+
+button {
+  @extend .btn;
+}
+
+.c-hand {
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  align-items: center;
+}
+.nav {
+  @extend .d-flex;
+  list-style: none;
+  &-item {
+    margin: 0 1rem;
+  }
+  &-link {
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.grid {
+  display: grid;
+
+  &-item {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@each $count in $grid-count {
+  .grid-#{$count} {
+    @extend .grid;
+    grid-template-columns: repeat($count, 1fr);
+    gap: 1rem;
+
+    @media (min-width: 768px) and (max-width: 920px) {
+      grid-template-columns: repeat($count - 2, 1fr);
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: auto;
+    }
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  // height: 100%;
+  height: 13rem;
+  padding: 1rem;
+  background: #ffffff;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem !important;
+}
