@@ -19,7 +19,7 @@ const App = () => {
 
   const callAPi = async () => {
     try {
-      const data = await API.get("saathi");
+      const data = await API.get("saathiapi", "/api");
       console.log(data);
     } catch (error) {
       console.log(error);
